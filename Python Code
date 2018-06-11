@@ -1,0 +1,31 @@
+def matVec(A,x):
+
+  n = len(A)
+  # returns number of lists in A, Returning the number of rows A
+  m = len(x)
+  # returns number of lists in B, Returning the number of rows in x=Collumns in A
+  p = len(x[0])
+  # returns number of lits in first list of B, Returning the number of Collumns in x
+  #initialize C to be a matrix n x p with 0s for all entries.
+  B = [[0]*p for row in range(n)]
+  for i in range(n):
+    # While range of rows in A
+    for j in range(p):
+      # While in range of collumns in x
+      b_ij = 0
+      # Start sequence from 0
+      for k in range(m):
+        # While in range of rows in x and collumns in A
+        b_ij +=  A[i][k]*x[k][j]
+        # Sum sequence of matrix A's individual collumns for each row times the corresponding row in vector x
+        
+
+      B[i][j] = b_ij
+  return B
+# Definition returns value for B at the end of the loop
+# Ax=B
+A = [[1,2,3],[4,5,6],[7,8,9]]
+x = [[1],[2],[3]]
+# Values for A and x
+
+print(matVec(A,x))
